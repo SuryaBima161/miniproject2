@@ -71,8 +71,6 @@ func GenerateSelected(selectedBook models.DaftarBuku) {
 }
 func PrintSelectedBook() {
 	ListBuku()
-
-	// Prompt user to select a book
 	fmt.Print("Masukkan nomor urut buku yang ingin dicetak: ")
 	var selectedNumber int
 	_, err := fmt.Scanln(&selectedNumber)
@@ -80,17 +78,11 @@ func PrintSelectedBook() {
 		fmt.Println("Terjadi error:", err)
 		return
 	}
-
-	// Ensure the selected number is within the valid range
 	if selectedNumber < 1 || selectedNumber > len(listBook) {
 		fmt.Println("Nomor urut buku tidak valid.")
 		return
 	}
-
-	// Get the selected book from the list
 	selectedBook := listBook[selectedNumber-1]
-
-	// Generate PDF for the selected book
 	Selected(selectedBook)
 }
 

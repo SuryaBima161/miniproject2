@@ -16,8 +16,9 @@ func main() {
 	fmt.Println("2. Edit Buku")
 	fmt.Println("3. Delete Buku")
 	fmt.Println("4. List Buku")
-	fmt.Println("5. Generate PDF")
-	fmt.Println("6. Out Program")
+	fmt.Println("5. Print Semua Buku")
+	fmt.Println("6. Print Buku")
+	fmt.Println("7. Out Program")
 	fmt.Println("Tekan pilihanmu")
 	_, err := fmt.Scanln(&chooseOrder)
 
@@ -36,6 +37,8 @@ func main() {
 	} else if chooseOrder == 5 {
 		usecase.GeneratePdf()
 	} else if chooseOrder == 6 {
+		usecase.PrintSelectedBook()
+	} else if chooseOrder == 7 {
 		os.Exit(0)
 	}
 	main()
